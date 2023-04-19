@@ -1,0 +1,27 @@
+<h1>Creacion de facturas</h1>
+<p>Id del cliente <input type="text" [(ngModel)]="idCliente"></p>
+<p>total de la factura <input type="number" [(ngModel)]="totalFactura"></p>
+<p>IVA aplicable <input type="number" [(ngModel)]="iva"></p>
+<button (click)="anadir()">Añadir</button>
+<button (click)="modificar()">Modificar</button>
+<p>Id de la factura a eliminar<input type="number" [(ngModel)]="idFactura"></p>
+<button (click)="eliminar()">Eliminar</button>
+<hr>
+<h1>Lista de facturas</h1>
+<table>
+    <thead>
+        <th>id Factura</th>
+        <th>id Cliente</th>
+        <th>Total Factura</th>
+        <th>IVA</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of mostrar()">
+            <td>{{item.idFactura}}</td>
+            <td>{{item.idCliente}}</td>
+            <td>{{item.totalFactura}}</td>
+            <td>{{item.iva}}</td>
+        </tr>
+    </tbody>
+</table>
+
